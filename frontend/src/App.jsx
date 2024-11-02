@@ -1,17 +1,21 @@
 import React from "react"
+import {BrowserRouter as Router, Routes ,Route, Navigate} from "react-router-dom"
+import Login from "./pages/Login"
+import AdminDashboard from "./pages/AdminDashboard"
 
 function App() {
 
 
   return (
-    <>
-      <div>
-      <h1>App</h1>
-      </div>
-     
-      
+    <Router>
+      <Routes>
+        <Route  path="/" element={<Navigate to="/login"/>}/>
+        <Route  path="/login" element={<Login/>} />
+        <Route  path="/admin-dashboard" element={<AdminDashboard/>} />
+      </Routes>
+    </Router>
 
-    </>
+
   )
 }
 
